@@ -46,5 +46,6 @@ group :development, :test do
   gem 'therubyracer'
   gem 'simple_form'
   gem 'devise'
+  gem 'cancan'
 end
 
