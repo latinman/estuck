@@ -61,5 +61,7 @@ group :development, :test do
   gem 'friendly_id'
 
   gem 'stripe'
+
+  gem 'aasm'
 end
 
