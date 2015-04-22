@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
   def create
     book = Book.find_by!(slug: params[:slug])
-    token  params[:stripeToken]
+    token = params[:stripeToken]
 
     begin
       charge = Stripe::Charge.create(
@@ -11,7 +11,7 @@ class TransactionsController < ApplicationController
           description: current_user.email)
 
       @sale = book.sales.create!(
-          buyer.email: current_user.email)
+          buyer_email: current_user.email)
 
       redirect_to pickup_url(guid: @sale.guid)
     rescue Stripe::CardError => e
