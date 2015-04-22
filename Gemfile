@@ -53,5 +53,7 @@ group :development, :test do
   gem 'cancan'
 
   gem 'paperclip'
+
+  gem 'dotenv-rails', groups: :development
 end
 
